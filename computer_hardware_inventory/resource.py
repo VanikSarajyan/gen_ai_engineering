@@ -14,11 +14,11 @@ class Resource:
         return self.__class__.__name__.lower()
 
     @property
-    def total(self):
+    def total(self) -> int:
         return self._total
 
     @property
-    def allocated(self):
+    def allocated(self) -> int:
         return self._allocated
 
     def claim(self, n: int) -> None:

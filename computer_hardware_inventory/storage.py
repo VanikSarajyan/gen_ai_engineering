@@ -16,5 +16,5 @@ class Storage(Resource):
         self._capacity_GB = capacity_GB
 
     @property
-    def capacity_GB(self):
+    def capacity_GB(self) -> int:
         return self._capacity_GB
