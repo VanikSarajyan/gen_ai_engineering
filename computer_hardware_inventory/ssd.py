@@ -7,7 +7,7 @@ class SSD(Storage):
         name: str,
         manufacturer: str,
         capacity_GB: int,
-        interface: float,
+        interface: str,
         total: int = 0,
         allocated: int = 0,
     ) -> None:
@@ -15,5 +15,5 @@ class SSD(Storage):
         self._interface = interface
 
     @property
-    def interface(self):
+    def interface(self) -> str:
         return self._interface

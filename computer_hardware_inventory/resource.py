@@ -42,8 +42,9 @@ class Resource:
         if n > self._total:
             raise ValueError(f"Can't remove more {self._name}(s) than exists.")
         # Assuming that we first remove from not allocated
+        self._total -= n
         if self._allocated > self._total:
-            self.allocated = self.total
+            self._allocated = self.total
         print(f"Successfully removed {n} {self._name}(s).")
 
     def purchased(self, n: int) -> None:
@@ -60,7 +61,7 @@ class Resource:
         return n
 
     def __str__(self) -> str:
-        return self.__name
+        return self._name
 
     def __gather_attrs(self) -> str:
         attrs = []
